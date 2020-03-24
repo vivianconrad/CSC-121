@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Bits</title>    
+</head>
+
+<body style="text-align: center">
+    <h2> Bit Values Calculator</h2>    
+    <p>Enter the number of bits <input type="text" id="bitBox" size="12">
+        </p>
+    <button onclick="N = parseFloat(document.getElementById('bitBox').value);
+                     value = Math.pow(2,N);
+                     
+                     document.getElementById('outputDiv').innerHTML= 'With ' + N + ' bits, you can represent ' + value + ' values.';
+                     document.getElementById('kitten').src='https://cdn.shopify.com/s/files/1/1365/2497/products/Rainbow-unicorn-mask_900x.png?v=1553633323';
+                     ">How Many Values?
+    </button>
+    <br>
+    <img src="https://icatcare.org/app/uploads/2019/09/The-Kitten-Checklist-1.png" id="kitten" height="200">
+    <hr>
+    <div id="outputDiv"></div>
+</body>
+</html>

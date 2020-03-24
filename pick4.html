@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+    <title>Pick 4 Lottery</title>
+    </head>
+
+    <body style="background-color: aquamarine; text-align: center">
+        <h1>Pick-4 Lottery</h1>
+        <p>Number of balls: <input type="text" id="ballBox" size="12">
+        </p>
+        <button onclick="N = parseFloat(document.getElementById('ballBox').value);
+                         nOdds = Math.pow(N, 4);
+                         
+                         count = parseFloat(document.getElementById('countSpan').innerHTML);
+                         newCount = count + 1;
+                         document.getElementById('countSpan').innerHTML = newCount;
+                         
+                         document.getElementById('outputDiv').innerHTML = 'The Pick-4 lottery winner is ' + Math.floor(N*Math.random()) + '-' + Math.floor(N*Math.random()) + '-' + Math.floor(N*Math.random()) + '-' + Math.floor(N*Math.random()) + '<br> Your odds of winning are 1 in ' + nOdds + ' = ' + (1/nOdds);">
+        Generate Pick-4 Winner</button>
+        <hr>
+        <div id="outputDiv"></div>
+        <p>
+            <br>
+        Number of Drawings: <span id="countSpan">0</span>
+        </p>
+    </body>
+
+</html>

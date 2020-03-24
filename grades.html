@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+
+<html>
+<head>
+    <title>Grade Calculator</title>
+    </head>
+    
+<body>
+<h2>Grade Calculaator</h2>
+    <table>
+        <tr><td>Homework</td> <td><input type="text" id="homeworkBox" size="12"></td> <td><input type="text" id="homeworkPercent" size="12" value="25">%</td></tr>
+        <tr><td> Labs</td> <td><input type="text" id="labsBox" size="12"></td> <td><input type="text" id="labsPercent" size="12" value="20">%</td></tr>
+        <tr><td>Midterm</td> <td><input type="text" id="midtermBox" size="12"></td> <td><input type="text" id="midtermPercent" size="12" value="25">%</td></tr>
+        <tr><td>Final Exam</td> <td><input type="text" id="finalBox" size="12"></td> <td><input type="text" id="finalPercent" size="12" value="30">%</td></tr>
+    </table>
+    <button onclick="homework = parseFloat(document.getElementById('homeworkBox').value);
+                     labs = parseFloat(document.getElementById('labsBox').value);
+                     midterm = parseFloat(document.getElementById('midtermBox').value);
+                     final = parseFloat(document.getElementById('finalBox').value);
+                     
+                     hwPercent= parseFloat(document.getElementById('homeworkPercent').value);
+                     labPercent = parseFloat(document.getElementById('labsPercent').value);
+                     mtPercent = parseFloat(document.getElementById('midtermPercent').value);
+                     finalPercent = parseFloat(document.getElementById('finalPercent').value);
+                     
+                     weightedAvg = (homework *(hwPercent/100)) + (labs*(labPercent/100)) + (midterm * (mtPercent/100)) + (final*(finalPercent/100));
+                     roundedGrAvg = Math.round(weightedAvg*10)/10;
+                     document.getElementById('outputDiv').innerHTML = 'Your weighted grade average is ' + roundedGrAvg + '.';
+                     
+                     count = parseFloat(document.getElementById('countSpan').innerHTML);
+                     newCount = count + 1;
+                     document.getElementById('countSpan').innerHTML = newCount;">
+        Calculate
+    </button>
+    <hr>
+    <div id="outputDiv"></div>
+    <p>
+        Number of calculations: <span id="countSpan">0</span>
+    </p>
+    </body>
+</html>
