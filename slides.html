@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Vi Conrad's Page</title>
+    </head>
+
+<body>
+    <h1 align="middle">Vi Conrad</h1>
+    <br>
+<img id="mysteryImg" src="surfersparadise.jpg" alt="On the Beach" height="200" style="padding: 0 15 px; float:left"
+     onmouseover="this.height=400;"
+     onmouseout="this.height=200;">
+    <p style="margin-top: auto">
+        Picture Description:
+        <br>
+        <span id="outputSpan"></span>
+    </p>
+    
+    
+    <br>
+    &nbsp; <button onclick="document.getElementById('mysteryImg').src=
+                     'cat.jpg';
+                    document.getElementById('outputSpan').innerHTML=
+                     'This is my cat Mochi. She is a year old and crazy';">My Cat</button>
+    
+     <button onclick="document.getElementById('mysteryImg').src=
+                     'dorian.jpg';
+                      document.getElementById('outputSpan').innerHTML=
+                     'This is my hedgehog Dorian. He is very grump especially when he wakes up';"
+                      >My Hedgehog</button>
+     <button onclick="document.getElementById('mysteryImg').src=
+                     'ferret.jpg';
+                      document.getElementById('outputSpan').innerHTML=
+                     'I really want a pet ferret. that would be so cool!';">Future Pet</button>
+    <button onclick="document.getElementById('mysteryImg').src=
+                     'Roomate.jpg';
+                      document.getElementById('outputSpan').innerHTML=
+                     'This is my roommate';">My Roommate</button>
+    <button onclick="document.getElementById('mysteryImg').src=
+                     'quokka.jpg';
+                     document.getElementById('outputSpan').innerHTML=
+                     'My roommate and I went to Rottnest island ot see the Quokkas';">Favorite Animal</button>
+
+    <br>
+    <button onclick="alert('bruh...' + 'what the heck?');">click</button>
+    </body>
+</html>
