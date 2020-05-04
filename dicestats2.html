@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- dicestats2.html                               Dave Reed -->
+<!-- This page simulates dice rolls and displays statistics. -->
+<!-- ======================================================= -->
+
+<html>
+ <head>
+   <title> Die Rolls </title>
+   <script src="http://dave-reed.com/csc121/random.js">
+     // Using: RandomInt
+   </script>
+   <script>
+     function Roll()
+     // Assumes: die images are in dave-reed.com/csc121/Images
+     // Results: displays displays random dice rolls and keeps counts
+     {
+       path = 'http://dave-reed.com/csc121/Images/';
+       
+       roll1 = RandomInt(1, 6);
+       document.getElementById('dieImg1').src = path + 'die' + roll1 + '.gif';
+       
+       roll2 = RandomInt(1, 6);
+       document.getElementById('dieImg2').src = path + 'die' + roll2 + '.gif';
+       
+       numRolls = parseFloat(document.getElementById('rollSpan').innerHTML);
+       document.getElementById('rollSpan').innerHTML = numRolls + 1;
+       
+       if (roll1 == roll2) {
+           numDoubles = parseFloat(document.getElementById('doubleSpan').innerHTML);
+           document.getElementById('doubleSpan').innerHTML = numDoubles + 1; 
+       }
+     }
+          
+     function ResetCounts()
+     // Assumes: the number of rolls is stored in rollSpan
+     // Results: resets the number of rolls to 0
+     {
+       document.getElementById('rollSpan').innerHTML = 0;
+       document.getElementById('doubleSpan').innerHTML = 0;
+     }
+   </script>
+ </head>
+
+ <body>
+   <div style="text-align:center"> 
+     <p>
+       <img id="dieImg1" alt="die image" src="http://dave-reed.com/csc121/Images/die1.gif">
+       <img id="dieImg2" alt="die image" src="http://dave-reed.com/csc121/Images/die1.gif">      
+     </p>
+     <p>
+       <button onclick="Roll();">Click to Roll</button>
+       <button onclick="ResetCounts();">Reset Counts</button>  
+     </p>
+     <p>Number of rolls: <span id="rollSpan">0</span></p>
+     <p>Number of doubles: <span id="doubleSpan">0</span></p>
+   </div>
+ </body>
+</html>
+

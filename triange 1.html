@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <title> Point Distance </title>
+    <script>
+        function Distance(x1, y1, x2, y2) 
+        // Assumes: (x1, y1) and (x2, y2) are two point coordinates
+        // Returns: the distance between those points
+        {
+            return Math.sqrt(Math.pow(x1-x2, 2)+Math.pow(y1-y2, 2));
+        }
+        
+        function TriangleArea(side1, side2, side3)
+        //assumes: side1, side2, adn side3 are the lengths of triangle sides
+        // returns: the area of the triangle
+        {
+            s = (side1 + side2 + side3)/2;
+            return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+        }
+        
+        function ShowDistance()
+        // Assumes: point1xBox, point1yBox, point2xBox, and point2yBox contain nums 
+        // Results: displays the distance between the points
+        {
+            point1x = parseFloat(document.getElementById('point1xBox').value);
+            point1y = parseFloat(document.getElementById('point1yBox').value);
+            point2x = parseFloat(document.getElementById('point2xBox').value);
+            point2y = parseFloat(document.getElementById('point2yBox').value);  
+            point3x = parseFloat(document.getElementById('point3xBox').value);
+            point3y = parseFloat(document.getElementById('point3yBox').value);  
+            side1= Distance(point1x, point1y, point2x, point2y);
+            side2= Distance(point2x, point2y, point3x, point3y);
+            side3 = Distance(point3x, point3y, point1x, point1y);
+            area = TriangleArea(side1, side2, side3);
+            document.getElementById('outputDiv').innerHTML = 
+                'The distance between point 1 and 2 = ' + side1 + '<br>The distance between 2 and 3 = ' + side2 + '<br>The distance between 3 and 1 = ' + side3 + '<br> The area of your triangle is ' + area;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Point Distance</h1>
+    <p>Enter the coordinates of two points.</p>
+    <p>Corner 1: 
+        (<input type="text" id="point1xBox" size=6 style="text-align:right" value="0">,
+        <input type="text" id="point1yBox" size=6 style="text-align:right" value="0">)
+    </p>
+    <p>Corner 2:
+        (<input type="text" id="point2xBox" size=6 style="text-align:right" value="3">,
+        <input type="text" id="point2yBox" size=6 style="text-align:right" value="4">)
+    </p>
+    <p>Corner 3: 
+        (<input type="text" id="point3xBox" size=6 style="text-align:right" value="5">,
+        <input type="text" id="point3yBox" size=6 style="text-align:right" value="6">)
+    </p>
+    
+    <button onclick=
+            "ShowDistance();">Click for Distance</button>
+    <hr>
+    <div id="outputDiv"></div>
+    <div id="areaDiv"></div>
+</body>
+</html>

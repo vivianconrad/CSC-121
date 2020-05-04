@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Fill in the Blank Story</title>
+    <script>
+        function MakeStory()
+        //Assumes
+        // results 
+        {
+            userName = document.getElementById('userNameBox').value;
+            color = document.getElementById('colorBox').value;
+            adjective = document.getElementById('adjectiveBox').value;
+            time = document.getElementById('timeBox').value;
+            city = document.getElementById('cityBox').value;
+            animal = document.getElementById('animalBox').value;
+            otherName = document.getElementById('otherNameBox').value;
+            food = document.getElementById('foodBox').value;
+            lyAdjective = document.getElementById('lyAdjective').value;
+            emotion = document.getElementById('emotionBox').value;
+            show = document.getElementById('showBox').value;
+            exclaim = document.getElementById('exclamationBox').value;
+        document.getElementById('outputDiv').innerHTML=
+            '<p>&nbsp Once upon a time there was a college student named <big>' + userName + '</big> who lived in ' + city + '. Being a college student, ' + userName + ' spent most of her time stressing out, crying and forgetting to eat. Occasionally, she has time for her favorite hobby: ' + adjective + ' ax throwing. ' + userName + ' believes that it is a very exilerating activity that calms her extreme ' + emotion + '. It is also much better than ' + emotion + ' management classes.</p>' + '<p>&nbsp One day she went out ax throwing with her friend ' + otherName + ', who had to be pulled ' + lyAdjective + ' from his couch and his beloved pet ' + animal + '. They went ax throwing and were making every target. ' + userName + ' was so excited as her training would come in handy while taking down the New World Order. After a couple ' + adjective + ' hours, the two begain to look a little ' + color + ' in the face and decided to take a break. This turned out to be a terrible mistake.</p> <p>&nbsp' + userName + ' and ' + otherName + ' sat down to eat some ' + food + ', but ' + userName + ' did not realize that there was an assassin cat named Simon in the shadows waiting to finish the deed. While the cat was waiting, he was patiently watched ' + show + ' to pass the time. The pettiness of the human moving picture box amused him. ' + time + ' later, Simon pounced. All that was heard was a loud ' + exclaim + ' and then silence.</p>';
+        }
+    </script>
+    
+    </head>
+
+<body style="background-color: springgreen">
+    <h1 style="color: brown">Vi's Totally Not a MadLibs Story</h1>
+    <p><small>Buckel your seat belts lads and laddies because this is about to be weird (hence the weird color background)</small></p>
+    <br>
+    <p>
+        Enter a girl's name:
+        <input type="text" id="userNameBox" size=12 value="Sam">
+        <br>
+        Enter a color:
+        <input type="text" id="colorBox" size=12>
+        <br>
+        Enter an adjective 
+        <input type="text" id="adjectiveBox" size=12>
+        <br>
+        Enter an amount of time 
+        <input type="text" id="timeBox" size=12 value="thirty miliseconds">
+        <br>
+        Enter a city:
+        <input type="text" id="cityBox" size=12>
+        <br>
+        Enter an animal
+        <input type="text" id="animalBox" size=12>
+        <br>
+        Enter a name:
+        <input type="text" id="otherNameBox" size=12>
+        <br>
+        Enter your favorite food:
+        <input type="text" id="foodBox" size=12>
+        <br>
+        Enter an adjective that ends in "ly"
+        <input type="text" id="lyAdjective" size=12>
+        <br>
+        Enter an emotion:
+        <input type="text" id="emotionBox" size=15>
+        <br>
+        Enter your favorite TV show:
+        <input type="text" id="showBox" size=12>
+        <br>
+        Enter a funny exclamation
+        <input type="text" id="exclamationBox" size=12 value="wow">
+        <br>
+    </p>
+    <button onclick=
+            MakeStory();> Click for Story
+    </button>
+    <hr>
+    <div id="outputDiv"></div>
+</body>
+</html>

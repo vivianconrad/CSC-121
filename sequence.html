@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Random Sequence Generator</title>
+    <script src="http://dave-reed.com/csc121/random.js">
+    </script>
+    <script>
+        function RandomGenerator()
+        //Assumes
+        //
+        {
+            possibleChars = document.getElementById('letterBox').value;
+            sequence = RandomOneOf(possibleChars) + RandomOneOf(possibleChars)+RandomOneOf(possibleChars);
+            count = parseFloat(document.getElementById('countSpan').innerHTML);
+             newCount = count + 1;
+             document.getElementById('countSpan').innerHTML = newCount;
+             document.getElementById('outputDiv').innerHTML = 
+                'Your random sequence is ' + sequence;
+        }
+        
+    </script>
+</head>
+<body>
+    <h>Random Sequence Generator</h>
+    <p>Characters to choose from: <input type="text" id="letterBox" size=6></p>
+    <button onclick=
+            " RandomGenerator();
+             ">Click for Sequence</button>
+    <hr>
+    <div id="outputDiv"></div>
+    <p>Number of sequences generated: <span id="countSpan">0</span></p>
+</body>
+</html>

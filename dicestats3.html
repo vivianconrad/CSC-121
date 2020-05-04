@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- dicestats3.html                               Vi Conrad -->
+<!-- This page simulates dice rolls and displays statistics. -->
+<!-- ======================================================= -->
+
+<html>
+
+    <head>
+        <title> Die Rolls </title>
+        <script src="http://dave-reed.com/csc121/random.js">
+            // Using: RandomInt
+        </script>
+        
+        <script>
+            function RollStats()
+            // Assumes: desiredBox contains the desired number of rolls
+            // Results: simulates that number of rolls and reports doubles
+            {
+                desiredRolls = parseFloat(document.getElementById('desiredBox').value);
+
+                numRolls = 0;
+                numDoubles = 0;
+                numSevens = 0;
+                //sevens in general
+                natSev = 0;
+                // natural sevens of 3 and 4
+                
+                while (numRolls < desiredRolls) 
+                {
+                    roll1 = RandomInt(1, 6);
+                    roll2 = RandomInt(1, 6);
+                    numRolls = numRolls + 1;
+                        
+                    if (roll1 == roll2) 
+                    {
+                        numDoubles = numDoubles + 1;
+                    }
+                    if (roll1 + roll2 == 7)
+                    {
+                        numSevens = numSevens +1;
+                    }
+                    if ((roll1 ==3 && roll2 == 4) || (roll1 == 4 && roll2 == 3))
+                        {
+                            natSev = natSev +1;
+                        }
+                }
+     
+                percentDoubles = Math.round(((numDoubles/numRolls)*100)*10)/10;
+                // percentDoubles = Math.round(percent *10)/10;
+                percentSev = Math.round(((numSevens/numRolls)*100)*10)/10;
+                percentNatSev = Math.round(((natSev/numRolls)*100)*10)/10;
+                unnatSev = numSevens - natSev;
+                document.getElementById('outputDiv').innerHTML =
+                    'Out of ' + numRolls + ' rolls, <br>' + numDoubles + ' were doubles which is ' + percentDoubles +'% <br>' + numSevens + ' were sevens which is ' + percentSev + '% <br>' + natSev + ' were natural sevens which is ' + percentNatSev +'% <br><br> So the unnatural';
+            }
+        </script>
+    </head>
+
+    <body>
+        <div style="text-align:center"> 
+            <p>
+                Enter the desired number of rolls: <input type="text" id="desiredBox" value=1000>   
+            </p>
+            <button onclick="RollStats();">Click to Roll</button>
+            <hr>
+            <div id="outputDiv"></div>
+        </div>
+    </body>
+
+</html>
+

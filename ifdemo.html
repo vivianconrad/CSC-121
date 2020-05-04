@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- ifdemo.html                         Dave Reed -->
+<!-- This program congratulates an A-level grade.  -->
+<!-- ============================================= -->
+
+<html>
+ <head>
+   <title> If Demo Page </title>
+   <script>
+     function ShowMessage()
+     // Assumes: gradeBox contains a grade (non-negative number)
+     // Results: displays a congratulatory message for an A-level grade
+     {
+       grade = parseFloat(document.getElementById('gradeBox').value); 
+       
+       if (grade >= 90) {
+         alert('Congratulations - you earned an A!');
+       }
+     }
+   </script>
+ </head>
+
+ <body>
+   <p>Your grade: <input type="text" id="gradeBox" size=6 value=""></p>
+   <button onclick="ShowMessage();">Click for Message</button>
+ </body>
+</html>
+

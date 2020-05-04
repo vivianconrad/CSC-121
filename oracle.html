@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Oracle</title>
+    <script src="http://dave-reed.com/csc121/random.js">
+    </script>
+    <script>
+        function MakeGuess()
+        //Assumes
+        // results 
+        {
+            answer = RandomOneOf(['yes', 'no', 'do pigs fly?', 'try again later', 'the future is uncertain, but hotdogs are not', 'maybe you should lower your hopes by a lot']);
+            document.getElementById('outputSpan').innerHTML= answer;
+        }
+        
+    </script>
+</head>
+
+<body style="text-align: center">
+    <h1 style="align-content: center">The Oracle of the internet</h1>
+    <p>Enter your YES/NO question below:
+        <input type="text" id="questionBox" size=50>
+        <br>Mouse over the oracle to get your answer
+    <br>
+    </p>
+    <img src="HoodCat.jpg" alt="oracle" height="400"
+         onmouseover="MakeGuess(); 
+                      this.src='notHood.jpg';"
+         onmouseout = "this.src='HoodCat.jpg';">
+    <br><br>
+    <hr>
+    
+    <p>The Oracle of the Internet says: <br></p>
+    <h2><span id="outputSpan" style="color: red"></span></h2>
+    </body>
+</html>

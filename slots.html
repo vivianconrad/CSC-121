@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- slots.html                                       Vi Conrad -->
+<!-- This page simulates a slot machine and displays statistics. -->
+<!-- ======================================================= -->
+<html>
+<head>
+    <title>Slots</title>
+    <script src="http://dave-reed.com/csc121/random.js">
+        // Using: randomInt
+    </script>
+    
+    <script>
+        function Roll()
+        // Assumes: images are in file folder
+        // Results: displays random slot rolls and keeps count
+        {
+
+            credits = parseFloat(document.getElementById('creditSpan').value = 20);
+                
+            
+            if (credits > 0)
+                {
+                    roll1 = RandomInt(1,4);
+                    document.getElementById('slot1').src = 'image' + roll1 + '.jpg';
+                    roll2 = RandomInt(1,4);
+                    document.getElementById('slot2').src = 'image' + roll2 + '.jpg';
+                    roll3 = RandomInt(1,4);
+                    document.getElementById('slot3').src = 'image' + roll3 + '.jpg';
+
+                    count = parseFloat(document.getElementById('countSpan').innerHTML);
+                                 newCount = count + 1;
+                                 document.getElementById('countSpan').innerHTML = newCount;
+
+                    if (roll1 == roll2 && roll3 == roll1)
+                        {
+                            alert('You win');
+                            credits = parseFloat(document.getElementById('creditSpan').innerHTML);
+                                 moreCredits = credits + 12;
+                                 document.getElementById('creditSpan').innerHTML = moreCredits;
+                        }
+                    else 
+                        {
+                           credits = parseFloat(document.getElementById('creditSpan').innerHTML);
+                                 lessCredits = credits - 1;
+                                 document.getElementById('creditSpan').innerHTML = lessCredits;
+                        }
+                }
+            if (credits <= 0) 
+                {
+                    alert('You are broke. Goodbye');
+                    ResetCount();
+                    
+                }
+            
+        }
+
+        
+        function ResetCount()
+        // Assumes: the number of rolls is stored in rollSpan
+        // Results: resets the number of rolls to 0
+        {
+            document.getElementById('countSpan').innerHTML = 0;
+            document.getElementById('creditSpan').innerHTML = 20;
+        }    
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center"> 
+        <p>
+            <img id="slot1" alt="starburst image" src="starbursts.jpg" height="200">
+            <img id="slot2" alt="mms image" src="mms.jpg" height="200">
+            <img id="slot3" alt="reeses image" src="reeses.jpg" height="200">
+        </p>
+        <button onclick= "Roll();">Click to spin</button>
+        <button onclick= "ResetCount();">Click to reset</button>
+        <p>Number of Spins: <span id='countSpan'>0</span>
+        <br>Player Credits: <span id='creditSpan'>20</span></p>
+    </div>
+</body>
+
+
+</html>

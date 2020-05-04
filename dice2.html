@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- dice2.html                                Dave Reed -->
+<!-- This page simulates and displays the roll two dice. -->
+<!-- =================================================== -->
+
+<html>
+ <head>
+   <title> Die Rolls </title>
+   <script src="http://dave-reed.com/csc121/random.js">
+     // Using: RandomOneOf
+   </script>
+   <script>
+     function Roll()
+     // Assumes: die images are in dave-reed.com/csc121/Images
+     // Results: displays randomly selected images of two 6-sided dice
+     {
+       path = 'http://dave-reed.com/csc121/Images/';
+       
+       file1 = RandomOneOf(['die1.gif', 'die2.gif', 'die3.gif', 'die4.gif', 'die5.gif', 'die6.gif']);
+       document.getElementById('dieImg1').src = path + file1;
+       
+       file2 = RandomOneOf(['die1.gif', 'die2.gif', 'die2.gif', 'die4.gif', 'die5.gif', 'die6.gif']);
+       document.getElementById('dieImg2').src = path + file2;
+     }
+   </script>
+ </head>
+
+ <body>
+   <div style="text-align:center"> 
+     <p>
+       <img id="dieImg1" alt="die image" src="http://dave-reed.com/csc121/Images/die1.gif">
+       <img id="dieImg2" alt="die image" src="http://dave-reed.com/csc121/Images/die1.gif">     
+     </p>
+     <button onclick="Roll();">Click to Roll</button>
+   </div>
+ </body>
+</html>
+

@@ -1,0 +1,33 @@
+<! DOCTYPE HTML>
+<! VI CONRAD >
+<html>
+<head>
+    <title> Point Distance </title>
+    <script src="geometry.js">
+    //using:distance, trianglearea
+    </script>
+</head>
+
+<body>
+    <h1>Point Distance</h1>
+    <p>Enter the coordinates of two points.</p>
+    <p>Corner 1: 
+        (<input type="text" id="point1xBox" size=6 style="text-align:right" value="0">,
+        <input type="text" id="point1yBox" size=6 style="text-align:right" value="0">)
+    </p>
+    <p>Corner 2:
+        (<input type="text" id="point2xBox" size=6 style="text-align:right" value="3">,
+        <input type="text" id="point2yBox" size=6 style="text-align:right" value="0">)
+    </p>
+    <p>Corner 3: 
+        (<input type="text" id="point3xBox" size=6 style="text-align:right" value="0">,
+        <input type="text" id="point3yBox" size=6 style="text-align:right" value="4">)
+    </p>
+    
+    <button onclick=
+            "ShowDistance(); CalculateArea();">Click for Distance</button>
+    <hr>
+    <div id="outputDiv"></div>
+    <div id="areaDiv"></div>
+</body>
+</html>
